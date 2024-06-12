@@ -119,7 +119,10 @@
 <main class="p-4 ml-60 h-auto">
   <div class="grid grid-cols-2 items-center mb-3">
     <h1 class="text-2xl font-bold" contenteditable bind:textContent={title}></h1>
-    <button class="ml-auto bg-gray-800 text-white px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-gray-900" on:click={saveNote}>Save</button>
+    <div class="ml-auto">
+      <button class="bg-red-700 text-white px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-red-800" on:click={deletePage(currentPageIndex)}>Delete</button>
+      <button class="bg-gray-800 text-white px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-gray-900" on:click={saveNote}>Save</button>
+    </div>
   </div>
   <hr>
   <textarea class="mt-4 block w-full h-60 bg-gray-50 border border-gray-300 rounded-lg p-2.5" bind:value={note} name="note" placeholder="Take a note..."></textarea>
@@ -130,6 +133,9 @@
     background-color: rgb(240, 240, 240);
   }
 
+  .bg-red {
+    background-color: red;
+  }
   .bg-dark-gray {
     background-color: rgb(219, 219, 219);
   }
